@@ -3,8 +3,21 @@ Debemos lograr tomar el importe por ID ,
 transformarlo a entero (parseInt), luego
 mostrar el importe con un aumento del 10 %
 en el cuadro de texto "RESULTADO".*/
-function mostrarAumento()
-{
+function mostrarAumento() {
+  let sueldo;
+  let nuevoSueldo;
+  let aumento;
 
-	alert("ok");
+  sueldo = parseInt(document.getElementById("txtIdSueldo").value);
+
+  aumento = sueldo * 10 / 100;
+
+  nuevoSueldo = sueldo + aumento;
+  document.getElementById("txtIdResultado").value = nuevoSueldo;
 }
+//----estrategia de resolucion----
+//declarar variables: sueldo nuevoSueldo aumento
+//leer el sueldo
+//calculo el aumento
+//obtendo el nuevo sueldo
+//muestro el resultado
