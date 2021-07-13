@@ -1,7 +1,14 @@
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
+	let edad;
+	let EstadoCivil;
+
+	edad=parseInt(document.getElementById("txtIdEdad").value);
+	EstadoCivil=document.getElementById("estadoCivil").value;
+
+	if(edad < 18 && EstadoCivil != "Soltero"){
+		alert("es muy chico para no ser soltero")
+	}
 	
 
 
