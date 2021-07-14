@@ -12,33 +12,48 @@ function mostrar()
 		switch(destino){
 			case "Bariloche":
 				precioFinal=precio *20 /100 + precio;
-				alert(` el costo de la estadia en ${destino} es de ${precioFinal}`);
 				break
 
 			case "Cataratas":
 			case "Cordoba":
 				precioFinal=precio - precio *0.10;
-				alert(`El costo de la estadia en ${destino} es de ${precioFinal}`);
 				break
 
 			case "Mar del plata":
 				precioFinal = precio - precio * .20;
-				alert(`El costo de la estadia en ${destino} es de ${precioFinal}`);
 		}
 	}
 	else if (estacion =="Verano"){
 		switch(destino){
 			case "Bariloche":
 				precioFinal=precio - precio * .20;
-				alert("el costo de la estadia "+precioFinal);
 				break 
-			case "Cataratas":
-				precioFinal=precio * .10 + precio;
-				
-			case "Mar del plata":
+
 			case "Cordoba":
+			case "Cataratas":
+				precioFinal=precio - precio * .10 ;
+				break
+
+			case "Mar del plata":
+				precioFinal=precio * .20 + precio;
 		}
 	}
+	else if (estacion=="Otoño" || estacion == "Primavera"){
+		switch(destino){
+			case "Bariloche":
+			case "Cataratas":
+			case "Mar del plata":
+				precioFinal=precio * .10 + precio;
+				break
+
+			case "Cordoba":
+				precioFinal= precio;
+		}
+	}
+	alert(`el costo de la estadia en ${destino} es de ${precioFinal}`);
+
+
+	
 /*
 	switch(estacion){
 		case "Invierno":
