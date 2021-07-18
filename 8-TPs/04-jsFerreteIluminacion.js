@@ -12,10 +12,76 @@ function CalcularPrecio ()
 {
  	let precioComun;
     let marcaLampara;
+    let precioDescuento;
+    let compraCantidad;
+    let precioSinDescuento;
 
+    
+    precioComun=parseInt(35);
+    marcaLampara=document.getElementById("Marca").value;
+    compraCantidad=parseInt(document.getElementById("txtIdCantidad").value);
+    precioSinDescuento=precioComun*compraCantidad;
 
-    marcaLampara=
-    precioComun=35000;
+    if(compraCantidad >= 6){
+        precioDescuento = precioSinDescuento - precioSinDescuento * 0.50;
+        document.getElementById("txtIdPrecioDescuento").value=precioDescuento;
+    }
+    switch(compraCantidad){
+        case 5:
+            if(marcaLampara=="ArgentinaLuz"){
+                precioDescuento=precioComun * compraCantidad -precioComun*0.4;
+                document.getElementById("txtIdPrecioDescuento").value=precioDescuento;
+            }
+            else{
+                precioDescuento=precioComun * compraCantidad -precioComun*0.3;
+                document.getElementById("txtIdPrecioDescuento").value=precioDescuento;
+            }
+            break
+        case 4:
+            if(marcaLampara=="ArgentinaLuz" || marcaLampara=="FelipeLamparas"){
+                precioDescuento=precioComun * compraCantidad -precioComun*0.25;
+                document.getElementById("txtIdPrecioDescuento").value=precioDescuento;
+            }
+            else{
+                precioDescuento+precioComun * compraCantidad -precioComun*0.20;
+                document.getElementById("txtIdPrecioDescuento").value=precioDescuento;
+            }
+            break
+        case 3:
+            if(marcaLampara=="ArgentinaLuz"){
+                precioDescuento=precioComun * compraCantidad -precioComun*0.15;
+                document.getElementById("txtIdPrecioDescuento").value=precioDescuento;
+            }
+            else if(marcaLampara=="FelipeLamparas"){
+                precioDescuento=precioComun * compraCantidad -precioComun*0.10;
+                document.getElementById("txtIdPrecioDescuento").value=precioDescuento;
+            }
+            else{
+                precioDescuento=precioComun * compraCantidad -precioComun*0.5;
+                document.getElementById("txtIdPrecioDescuento").value=precioDescuento;
+            }
+            break
+        case 2:
+            precioDescuento=precioSinDescuento
+            document.getElementById("txtIdPrecioDescuento").value=precioDescuento
+            break
+        case 1:
+            precioDescuento=precioSinDescuento
+            document.getElementById("txtIdPrecioDescuento").value=precioDescuento
+    }
+    
+    if(precioDescuento>120){
+        let impuesto;
+        let precioConImpuesto;
+
+        impuesto=precioDescuento*10/100;
+        precioConImpuesto= precioDescuento+impuesto;
+
+        alert(`Usted pago ${impuesto} de IIBB`);
+
+    }
+    //alert(`Usted pago ${precioDescuento} por ${compraCantidad} lamparas de ${marcaLampara} `)
+    
 
      
 }
