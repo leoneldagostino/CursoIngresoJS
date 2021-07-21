@@ -62,12 +62,9 @@ function CalcularPrecio ()
             }
             break
         case 2:
-            precioDescuento=precioSinDescuento
-            document.getElementById("txtIdPrecioDescuento").value=precioDescuento
-            break
         case 1:
-            precioDescuento=precioSinDescuento
-            document.getElementById("txtIdPrecioDescuento").value=precioDescuento
+            precioDescuento=precioSinDescuento;
+            document.getElementById("txtIdPrecioDescuento").value=precioDescuento;
     }
     
     if(precioDescuento>120){
